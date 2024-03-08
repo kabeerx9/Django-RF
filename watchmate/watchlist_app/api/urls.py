@@ -1,8 +1,10 @@
 
-from django.urls import path , include
-from watchlist_app.api.views import movie_list , movie_details
+from django.urls import path
+from watchlist_app.api.views import watch_list , watch_detail , stream_platform , stream_detail
 
 urlpatterns = [
-    path("list/", movie_list, name="movie_list" ),
-    path("<int:pk>" , movie_details , name="movie_details")
+    path("list/", watch_list, name="watch_list" ),
+    path("<int:pk>" , watch_detail , name="watch_detail"),
+    path("stream/", stream_platform, name="stream_platform" ),
+    path("stream/<int:pk>" , stream_detail , name="stream_detail"),
 ]
