@@ -46,7 +46,10 @@ def stream_platform(request):
     serializer = StreamPlatformSerializer(platform , many=True)
     return Response(serializer.data)
   else:
+    print("I am here with request data as ",request.data)
     serializer = StreamPlatformSerializer(data=request.data)
+    print(serializer)
+    print(serializer.is_valid())
     if serializer.is_valid():
       serializer.save()
       return Response(serializer.data)
