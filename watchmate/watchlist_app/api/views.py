@@ -43,7 +43,7 @@ def watch_detail(request,pk):
 def stream_platform(request):
   if request.method == 'GET':
     platform = StreamPlatform.objects.all()
-    serializer = StreamPlatformSerializer(platform , many=True)
+    serializer = StreamPlatformSerializer(platform , many=True )
     return Response(serializer.data)
   else:
     print("I am here with request data as ",request.data)
